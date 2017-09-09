@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GithubApp</string>
+    <string name="names">Name: </string>
+    <string name="url">URL: </string>
+    <string name="follower_url">Follower URL: </string>
+    <string name="gists_url">Gist URL: </string>
+    <string name="starred_url">Starred URL: </string>
+    <string name="repos_url">Repos URL: </string>
+    <string name="checkinternet">Please check internet connection! </string>
+    <string name="retry">Please retry! </string>
+</resources>

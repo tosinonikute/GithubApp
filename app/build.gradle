@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.githubapp"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+
+    // App dependencies
+    supportLibVer = '26.0.0'
+    retrofit = '2.3.0'
+    okhttp3 = '3.9.0'
+    gson = '2.8.1'
+    constraintlayout = '1.0.2'
+    glide = '3.6.0'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // Support lib
+    compile "com.android.support:appcompat-v7:$supportLibVer"
+    compile "com.android.support:design:$supportLibVer"
+    compile "com.android.support.constraint:constraint-layout:$constraintlayout"
+
+    // Network
+    compile "com.google.code.gson:gson:$gson"
+    compile "com.squareup.retrofit2:retrofit:$retrofit"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit"
+    compile "com.squareup.okhttp3:okhttp:$okhttp3"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp3"
+
+    //glide
+    compile "com.github.bumptech.glide:glide:${glide}"
+    testCompile 'junit:junit:4.12'
+}
